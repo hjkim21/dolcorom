@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>돌코롬 탑동 — 제주에서 가장 돌코롬한 한 잔</title>
+<meta name="description" content="제주 탑동, 제주더큰내일센터 1층. 제주 재료로 만들고 제주말로 이름 붙인 음료를 매일 새로 내립니다." />
+<meta property="og:title" content="돌코롬 탑동" />
+<meta property="og:description" content="제주에서 가장 돌코롬한 한 잔. 제주 탑동 · 제주더큰내일센터 1층" />
+<meta property="og:type" content="website" />
+
+<!-- JS가 살아 있을 때만 등장 애니메이션을 겁니다.
+     (스크립트가 막히면 .js 클래스가 없어 모든 내용이 그냥 보입니다) -->
+<script>document.documentElement.className += ' js';</script>
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ─────────────────────────── NAV ─────────────────────────── -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__logo">
+      <span class="nav__mark"></span>
+      돌코롬 <em>탑동</em>
+    </a>
+    <nav class="nav__menu">
+      <a href="#menu">메뉴</a>
+      <a href="#lab">우리의 실험</a>
+      <a href="#location">오시는 길</a>
+    </nav>
+    <a href="#location" class="btn btn--primary btn--sm">지금 찾아오기</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ─────────────────────────── HERO ─────────────────────────── -->
+<section class="hero">
+  <div class="hero__glow hero__glow--tangerine"></div>
+  <div class="hero__glow hero__glow--matcha"></div>
+
+  <div class="container hero__inner">
+    <p class="hero__eyebrow reveal">제주시 탑동 · 제주더큰내일센터 1층</p>
+    <h1 class="hero__title reveal" data-delay="1">
+      제주에서 가장<br />
+      <span class="grad">돌코롬한</span> 한 잔.
+    </h1>
+    <p class="hero__desc reveal" data-delay="2">
+      ‘돌코롬하다’는 제주말로 달콤하다는 뜻입니다.<br />
+      제주에서 자란 재료로 만들고, 제주말로 이름을 붙였습니다.
+    </p>
+    <div class="hero__actions reveal" data-delay="3">
+      <a href="#menu" class="btn btn--primary">메뉴 보러가기</a>
+      <a href="#location" class="btn btn--ghost">공항에서 오시는 길</a>
+    </div>
+  </div>
+
+  <div class="hero__scroll">
+    <span></span>
+    <p>스크롤</p>
+  </div>
+</section>
+
+<!-- ─────────────────── STATEMENT (sticky story) ─────────────────── -->
+<section class="statement" id="story">
+  <div class="statement__track">
+    <div class="statement__sticky">
+      <div class="container">
+        <p class="statement__label">우리가 카페를 여는 이유</p>
+        <div class="statement__lines">
+          <p class="statement__line" data-line="0">제주는 매일 다른 얼굴을 합니다.</p>
+          <p class="statement__line" data-line="1">그날의 바람, 그 계절의 감귤, 그 아침의 바다.</p>
+          <p class="statement__line" data-line="2">우리는 그걸 <span class="hl">한 잔으로 번역</span>합니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── PRINCIPLE ─────────────────────────── -->
+<section class="principle">
+  <div class="container">
+    <p class="sec__label reveal">우리가 지키는 것</p>
+    <h2 class="sec__title reveal" data-delay="1">
+      좋은 재료는 멀리서<br />오지 않습니다.
+    </h2>
+
+    <div class="stats">
+      <div class="stat reveal" data-delay="1">
+        <strong class="stat__num" data-count="7" data-suffix="일">7일</strong>
+        <p class="stat__key">로스팅 후 7일 이내</p>
+        <p class="stat__desc">‘밭담 블렌드’는 일주일이 지나면 팔지 않습니다. 남으면 그날 문 닫을 때 나눠 드립니다.</p>
+      </div>
+      <div class="stat reveal" data-delay="2">
+        <strong class="stat__num" data-count="100" data-suffix="%">100%</strong>
+        <p class="stat__key">제주 노지 감귤</p>
+        <p class="stat__desc">서귀포 계약 농가 세 곳에서만 받습니다. 농부 이름이 컵 홀더에 적혀 있습니다.</p>
+      </div>
+      <div class="stat reveal" data-delay="3">
+        <strong class="stat__num" data-count="19" data-suffix="종">19종</strong>
+        <p class="stat__key">제주 재료로만 만든 음료</p>
+        <p class="stat__desc">감귤, 백년초, 흑임자, 우도 땅콩, 구좌 천일염. 육지에서 오는 재료는 커피와 설탕뿐입니다.</p>
+      </div>
+      <div class="stat reveal" data-delay="4">
+        <strong class="stat__num" data-count="80" data-suffix="m">80m</strong>
+        <p class="stat__key">문 앞에서 바다까지</p>
+        <p class="stat__desc">탑동 방파제까지 걸어서 1분. 파도 소리가 배경음악이라 스피커를 크게 틀지 않습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── MENU ─────────────────────────── -->
+<section class="menu" id="menu">
+  <div class="container">
+    <p class="sec__label reveal">메뉴</p>
+    <h2 class="sec__title reveal" data-delay="1">
+      이름부터<br />제주입니다.
+    </h2>
+    <p class="sec__desc reveal" data-delay="2">
+      메뉴 이름은 모두 제주말이거나 제주의 풍경에서 가져왔습니다.<br />
+      뜻을 모르셔도 괜찮습니다. 주문하실 때 저희가 알려드릴게요.
+    </p>
+
+    <div class="tabs reveal" data-delay="3" role="tablist">
+      <button class="tab is-active" data-filter="all" role="tab" aria-selected="true">전체</button>
+      <button class="tab" data-filter="signature" role="tab" aria-selected="false">시그니처</button>
+      <button class="tab" data-filter="tea" role="tab" aria-selected="false">티 &amp; 인퓨전</button>
+      <button class="tab" data-filter="noncoffee" role="tab" aria-selected="false">논커피</button>
+      <button class="tab" data-filter="bakery" role="tab" aria-selected="false">베이커리</button>
+    </div>
+
+    <div class="cards" id="menuGrid">
+
+      <article class="card" data-cat="signature">
+        <div class="card__thumb card__thumb--tangerine"><span>🍊</span></div>
+        <div class="card__body">
+          <p class="card__tag">시그니처</p>
+          <h3 class="card__name">노랑바당</h3>
+          <p class="card__sub">감귤 말차 라떼</p>
+          <p class="card__desc">서귀포 노지 감귤청을 아래에 깔고 제주 유기농 말차를 얹습니다. 젓기 전엔 노란 바다, 젓고 나면 초록 바다.</p>
+          <p class="card__price">6,800원</p>
+        </div>
+      </article>
+
+      <article class="card" data-cat="signature">
+        <div class="card__thumb card__thumb--ink"><span>🌑</span></div>
+        <div class="card__body">
+          <p class="card__tag">시그니처</p>
+          <h3 class="card__name">구멍 숭숭</h3>
+          <p class="card__sub">현무암 흑임자 라떼</p>
+          <p class="card__desc">검은깨를 태우기 직전까지 볶아 갈았습니다. 표면의 거품 구멍이 현무암을 닮아 붙인 이름입니다.</p>
+          <p class="card__price">6,500원</p>
+        </div>
+      </article>
+
+      <article class="card" data-cat="signature">
+        <div class="card__thumb card__thumb--blue"><span>🌊</span></div>
+        <div class="card__body">
+          <p class="card__tag">시그니처</p>
+          <h3 class="card__name">바람코지</h3>
+          <p class="card__sub">해풍 소금 크림 콜드브루</p>
+          <p class="card__desc">‘코지’는 바다로 튀어나온 곶. 구좌 천일염으로 만든 짭짤한 크림이 콜드브루 위에 파도처럼 얹힙니다.</p>
+          <p class="card__price">6,300원</p>
+        </div>
+      </article>
+
+      <article class="card" data-cat="signature">
+        <div class="card__thumb card__thumb--brown"><span>🥜</span></div>
+        <div class="card__body">
+          <p class="card__tag">시그니처</p>
+          <h3 class="card__name">멜싹</h3>
+          <p class="card__sub">우도 땅콩 크림 라떼</p>
+          <p class="card__desc">‘멜싹’은 가득이라는 뜻. 우도 땅콩을 갈아 만든 크림을 이름값 하도록 가득 올립니다.</p>
+          <p class="card__price">6,800원</p>
+        </div>
+      </article>
+
+      <article class="card" data-cat="tea">
+        <div class="card__thumb card__thumb--pink"><span>🌵</span></div>
+        <div class="card__body">
+          <p class="card__tag">티 &amp; 인퓨전</p>
+          <h3 class="card__name">물맞이</h3>
+          <p class="card__sub">백년초 히비스커스 티</p>
+          <p class="card__desc">한여름 폭포수를 맞던 제주 풍습에서 이름을 빌렸습니다. 월령리 백년초 색이 그대로 자줏빛으로 우러납니다.</p>
+          <p class="card__price">6,000원</p>
+        </div>
+      </article>
+
+      <article class="card" data-cat="tea">
+        <div class="card__thumb card__thumb--gray"><span>🌧️</span></div>
+        <div class="card__body">
+          <p class="card__tag">티 &amp; 인퓨전 · 한정</p>
+          <h3 class="card__name">고사리장마</h3>
+          <p class="card__sub">제주 흑차 콜드 인퓨전</p>
+          <p class="card__desc">고사리 돋는 봄비 철에 어울리는 맛. 12시간 찬물에 우려 쓴맛 없이 깊습니다. <b>비 오는 날에만 판매합니다.</b></p>
+          <p class="card__price">6,500원</p>
+        </div>
+      </article>
+
+      <article class="card" data-cat="tea">
+        <div class="card__thumb card__thumb--matcha"><span>🍃</span></div>
+        <div class="card__body">
+          <p class="card__tag">티 &amp; 인퓨전</p>
+          <h3 class="card__name">오름 안개</h3>
+          <p class="card__sub">제주 녹차 편백 스모크</p>
+          <p class="card__desc">잔을 덮은 유리돔에 편백 연기를 채워 냅니다. 뚜껑을 여는 순간 안개 낀 오름 냄새가 납니다.</p>
+          <p class="card__price">7,000원</p>
+        </div>
+      </article>
+
+      <article class="card" data-cat="tea">
+        <div class="card__thumb card__thumb--cream"><span>🌼</span></div>
+        <div class="card__body">
+          <p class="card__tag">티 &amp; 인퓨전</p>
+          <h3 class="card__name">감귤꽃 지는 밤</h3>
+          <p class="card__sub">감귤꽃 허브 블렌딩</p>
+          <p class="card__desc">5월 감귤밭에서 딴 꽃을 말려 캐모마일과 섞었습니다. 카페인이 없어 밤에 마시기 좋습니다.</p>
+          <p class="card__price">6,200원</p>
+        </div>
+      </article>
+
+      <article class="card" data-cat="noncoffee">
+        <div class="card__thumb card__thumb--snow"><span>🏔️</span></div>
+        <div class="card__body">
+          <p class="card__tag">논커피</p>
+          <h3 class="card__name">눈 오는 한라산</h3>
+          <p class="card__sub">한라봉 요거트 스노우</p>
+          <p class="card__desc">한라봉 과육 위에 요거트를 눈처럼 갈아 덮습니다. 겨울 한라산 정상을 그대로 옮겨 담았습니다.</p>
+          <p class="card__price">7,200원</p>
+        </div>
+      </article>
+
+      <article class="card" data-cat="noncoffee">
+        <div class="card__thumb card__thumb--brown"><span>🥣</span></div>
+        <div class="card__body">
+          <p class="card__tag">논커피</p>
+          <h3 class="card__name">개역 한 사발</h3>
+          <p class="card__sub">제주 보리개역 셰이크</p>
+          <p class="card__desc">‘개역’은 제주말로 미숫가루. 여름이면 할머니가 타주던 그 맛을, 차갑게 갈아 사발 모양 잔에 냅니다.</p>
+          <p class="card__price">6,500원</p>
+        </div>
+      </article>
+
+      <article class="card" data-cat="noncoffee">
+        <div class="card__thumb card__thumb--blue"><span>🫧</span></div>
+        <div class="card__body">
+          <p class="card__tag">논커피</p>
+          <h3 class="card__name">물결 소다</h3>
+          <p class="card__sub">청귤 로즈마리 소다</p>
+          <p class="card__desc">8월에만 나는 덜 익은 청귤을 씁니다. 로즈마리를 손으로 쳐서 향을 깨운 뒤 넣습니다.</p>
+          <p class="card__price">6,000원</p>
+        </div>
+      </article>
+
+      <article class="card" data-cat="noncoffee">
+        <div class="card__thumb card__thumb--ink"><span>🌙</span></div>
+        <div class="card__body">
+          <p class="card__tag">논커피</p>
+          <h3 class="card__name">밤바당</h3>
+          <p class="card__sub">흑당 제주우유 라떼</p>
+          <p class="card__desc">제주 목장 우유에 직접 졸인 흑당을 흘려 넣습니다. 잔 안쪽에 밤바다 같은 검은 물결이 생깁니다.</p>
+          <p class="card__price">6,300원</p>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bakery">
+        <div class="card__thumb card__thumb--cream"><span>🍰</span></div>
+        <div class="card__body">
+          <p class="card__tag">베이커리</p>
+          <h3 class="card__name">오메기 티라미수</h3>
+          <p class="card__sub">오메기떡 × 마스카포네</p>
+          <p class="card__desc">핑거쿠키 대신 좁쌀 오메기떡을 깔았습니다. 위에는 코코아 대신 볶은 팥가루를 뿌립니다.</p>
+          <p class="card__price">8,000원</p>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bakery">
+        <div class="card__thumb card__thumb--matcha"><span>🥯</span></div>
+        <div class="card__body">
+          <p class="card__tag">베이커리</p>
+          <h3 class="card__name">빙떡 스콘</h3>
+          <p class="card__sub">메밀 무나물 스콘</p>
+          <p class="card__desc">제주 빙떡의 메밀과 무나물을 스콘으로 옮겼습니다. 짭짤해서 커피보다 차와 잘 맞습니다.</p>
+          <p class="card__price">4,500원</p>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bakery">
+        <div class="card__thumb card__thumb--brown"><span>🍪</span></div>
+        <div class="card__body">
+          <p class="card__tag">베이커리</p>
+          <h3 class="card__name">우도땅콩 휘낭시에</h3>
+          <p class="card__sub">태운 버터 × 우도 땅콩</p>
+          <p class="card__desc">버터를 갈색이 될 때까지 태우고 우도 땅콩을 통째로 박았습니다. 오후 2시에 갓 구워 나옵니다.</p>
+          <p class="card__price">4,000원</p>
+        </div>
+      </article>
+
+      <article class="card" data-cat="bakery">
+        <div class="card__thumb card__thumb--tangerine"><span>🧁</span></div>
+        <div class="card__body">
+          <p class="card__tag">베이커리</p>
+          <h3 class="card__name">감귤 소금 마들렌</h3>
+          <p class="card__sub">감귤 껍질 × 구좌 소금</p>
+          <p class="card__desc">감귤 껍질을 설탕에 절여 반죽에 넣고, 마지막에 굵은 소금을 한 알씩 올려 굽습니다.</p>
+          <p class="card__price">3,800원</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── LAB (아이디어) ─────────────────────────── -->
+<section class="lab" id="lab">
+  <div class="container">
+    <p class="sec__label reveal">우리의 실험 · 골라주세요</p>
+    <h2 class="sec__title reveal" data-delay="1">
+      카페가 열 개 있으면,<br />
+      <span class="grad">이유도 열 개</span> 있어야죠.
+    </h2>
+    <p class="sec__desc reveal" data-delay="2">
+      ‘탑동에서 커피 마시려면 여기’가 되기 위해 상상해 본 열 가지입니다.<br />
+      마음에 드는 번호를 골라 알려주시면, 그 컨셉으로 페이지를 다시 짜 드릴게요.
+    </p>
+
+    <div class="ideas">
+      <article class="idea reveal"><span class="idea__no">01</span>
+        <h3>제주말 주문 할인</h3>
+        <p>메뉴판에 제주말 발음을 적어둡니다. 제주말로 주문하면 500원 깎아드립니다. 사라져가는 말을 하루에 백 번쯤 들리게 만드는 장치입니다.</p>
+      </article>
+      <article class="idea reveal" data-delay="1"><span class="idea__no">02</span>
+        <h3>오늘 바다 온도 라떼</h3>
+        <p>매일 아침 탑동 앞바다 수온을 재서 칠판에 씁니다. 그 온도에 맞춘 라떼를 딱 그 숫자만큼(18℃면 18잔) 팝니다.</p>
+      </article>
+      <article class="idea reveal" data-delay="2"><span class="idea__no">03</span>
+        <h3>90분 몰입석</h3>
+        <p>제주더큰내일센터 청년을 위한 좌석. 타이머를 켜고 90분 동안 폰을 상자에 넣으면, 완주 시 한 잔 무료 리필.</p>
+      </article>
+      <article class="idea reveal" data-delay="3"><span class="idea__no">04</span>
+        <h3>원두 시계</h3>
+        <p>모든 잔에 ‘로스팅 후 몇 시간’이 찍혀 나옵니다. 신선함을 광고 문구가 아니라 숫자로 증명합니다.</p>
+      </article>
+      <article class="idea reveal"><span class="idea__no">05</span>
+        <h3>감귤 계절 시계</h3>
+        <p>청귤(8월) → 풋귤 → 노지감귤 → 한라봉. 계절이 바뀌면 시그니처가 자동으로 교체됩니다. 같은 메뉴를 사계절 내내 팔지 않습니다.</p>
+      </article>
+      <article class="idea reveal" data-delay="1"><span class="idea__no">06</span>
+        <h3>탑동 컵 반납 지도</h3>
+        <p>다회용컵으로 나가서 탑동 일대 어느 가게에나 반납하면 다음 잔 1,000원 할인. 동네 가게들과 함께 만드는 반납 네트워크.</p>
+      </article>
+      <article class="idea reveal" data-delay="2"><span class="idea__no">07</span>
+        <h3>해뜸 영업</h3>
+        <p>주 1회, 탑동 일출 시각에 맞춰 새벽에 문을 엽니다. 커피 한 잔과 담요를 들고 방파제로 나가 해 뜨는 걸 보고 옵니다.</p>
+      </article>
+      <article class="idea reveal" data-delay="3"><span class="idea__no">08</span>
+        <h3>실패한 레시피 바</h3>
+        <p>아직 완성 못 한 시제품을 2,000원에 팝니다. 손님이 점수를 매기고, 평균 8점을 넘으면 정식 메뉴가 됩니다.</p>
+      </article>
+      <article class="idea reveal"><span class="idea__no">09</span>
+        <h3>카운터 옆 로컬 마켓</h3>
+        <p>음료에 쓴 재료를 그 자리에서 팝니다. 감귤청 한 병, 백년초 가루 한 봉지. 소농의 판로가 카페 안에 생깁니다.</p>
+      </article>
+      <article class="idea reveal" data-delay="1"><span class="idea__no">10</span>
+        <h3>이름 짓기 공모</h3>
+        <p>신메뉴 이름을 손님이 제주말로 지어 냅니다. 채택되면 메뉴판에 그 사람 이름을 함께 새깁니다. 평생 무료 한 잔은 덤.</p>
+      </article>
+    </div>
+
+    <p class="lab__note reveal">번호만 말씀해 주세요. 예: <b>“2번이랑 7번으로 다시 만들어줘”</b></p>
+  </div>
+</section>
+
+<!-- ─────────────────────────── LOCATION / MAP ─────────────────────────── -->
+<section class="location" id="location">
+  <div class="container">
+    <p class="sec__label reveal">오시는 길</p>
+    <h2 class="sec__title reveal" data-delay="1">
+      공항에서<br />15분이면 도착합니다.
+    </h2>
+    <p class="sec__desc reveal" data-delay="2">
+      제주국제공항에서 바다를 끼고 동쪽으로 쭉. 제주더큰내일센터 1층입니다.
+    </p>
+
+    <div class="map-wrap reveal" data-delay="2">
+      <div class="map-panel">
+        <div class="route-tabs" role="tablist">
+          <button class="route-tab is-active" data-mode="car" role="tab" aria-selected="true">자동차 · 택시</button>
+          <button class="route-tab" data-mode="bus" role="tab" aria-selected="false">버스</button>
+          <button class="route-tab" data-mode="walk" role="tab" aria-selected="false">도보</button>
+        </div>
+
+        <div class="route-body">
+          <div class="route-pane is-active" data-pane="car">
+            <p class="route-time">약 15분 <span>· 7.2km · 택시 11,000원 내외</span></p>
+            <ol class="route-steps">
+              <li><b>제주국제공항</b> 3층 출발층에서 나와 렌터카·택시 승강장으로</li>
+              <li>공항로 → <b>서해안로</b>를 타고 바다를 왼쪽에 두고 동쪽으로</li>
+              <li>용담 해안도로 → 서부두 방면 직진</li>
+              <li><b>탑동로</b> 진입 후 제주더큰내일센터 앞 하차</li>
+            </ol>
+            <p class="route-tip">주차는 센터 주차장을 이용하세요. 음료 구매 시 2시간 무료입니다.</p>
+          </div>
+
+          <div class="route-pane" data-pane="bus">
+            <p class="route-time">약 25분 <span>· 요금 1,150원</span></p>
+            <ol class="route-steps">
+              <li>공항 <b>3번 게이트</b> 앞 정류장에서 시내 방면 간선버스 승차</li>
+              <li><b>관덕정</b> 또는 <b>중앙로</b> 정류장 하차</li>
+              <li>바다 방향(북쪽)으로 도보 7분</li>
+            </ol>
+            <p class="route-tip">노선 번호는 제주버스정보시스템(bus.jeju.go.kr)에서 실시간으로 확인하시는 게 정확합니다.</p>
+          </div>
+
+          <div class="route-pane" data-pane="walk">
+            <p class="route-time">약 1시간 30분 <span>· 7.2km 해안 산책</span></p>
+            <ol class="route-steps">
+              <li>공항에서 <b>용담레포츠공원</b> 방향으로</li>
+              <li><b>용담 해안도로</b>를 따라 계속 동쪽으로 (일몰 명소)</li>
+              <li>서부두 방파제 → 탑동 해변공연장 → 도착</li>
+            </ol>
+            <p class="route-tip">짐이 없다면 추천합니다. 도착해서 마시는 ‘바람코지’ 맛이 다릅니다.</p>
+          </div>
+        </div>
+
+        <div class="addr">
+          <div class="addr__row">
+            <span class="addr__k">주소</span>
+            <span class="addr__v">제주특별자치도 제주시 탑동로 55<br />제주더큰내일센터 1층</span>
+          </div>
+          <div class="addr__row">
+            <span class="addr__k">영업</span>
+            <span class="addr__v">매일 08:00 – 21:00<br />첫째·셋째 화요일 휴무</span>
+          </div>
+          <div class="addr__row">
+            <span class="addr__k">전화</span>
+            <span class="addr__v">064-000-0000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <div id="map" role="application" aria-label="제주국제공항에서 돌코롬 탑동까지의 경로 지도"></div>
+        <button class="map-reset" id="mapReset" type="button">경로 전체 보기</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── CTA ─────────────────────────── -->
+<section class="cta">
+  <div class="container cta__inner">
+    <h2 class="cta__title reveal">
+      바다 앞에서<br />기다리고 있을게요.
+    </h2>
+    <p class="cta__desc reveal" data-delay="1">
+      오늘의 원두와 그날의 한정 메뉴는 매일 아침 인스타그램에 올립니다.
+    </p>
+    <div class="cta__actions reveal" data-delay="2">
+      <a href="#location" class="btn btn--primary btn--lg">길찾기</a>
+      <a href="#menu" class="btn btn--dark-ghost btn--lg">메뉴 다시 보기</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ─────────────────────────── FOOTER ─────────────────────────── -->
+<footer class="foot">
+  <div class="container foot__inner">
+    <div class="foot__brand">
+      <span class="nav__mark"></span>
+      돌코롬 탑동
+    </div>
+    <div class="foot__cols">
+      <div>
+        <p class="foot__k">찾아오기</p>
+        <p>제주특별자치도 제주시 탑동로 55</p>
+        <p>제주더큰내일센터 1층</p>
+      </div>
+      <div>
+        <p class="foot__k">영업시간</p>
+        <p>매일 08:00 – 21:00</p>
+        <p>첫째·셋째 화요일 휴무</p>
+      </div>
+      <div>
+        <p class="foot__k">문의</p>
+        <p>064-000-0000</p>
+        <p>hello@dolkorom.jeju</p>
+      </div>
+    </div>
+    <p class="foot__copy">© 2026 돌코롬 탑동. 이 페이지는 창업 준비용 시안입니다.</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
